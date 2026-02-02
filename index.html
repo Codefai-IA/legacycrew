@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Legacy Crew</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+  <header>
+    <h1>Dashboard Legacy Crew</h1>
+  </header>
+
+  <main>
+    <section class="kpi-cards">
+      <div class="card">
+        <span class="card-label">Total de Cadastros</span>
+        <span class="card-value" id="total-cadastros">--</span>
+      </div>
+      <div class="card">
+        <span class="card-label">Cadastros Hoje</span>
+        <span class="card-value" id="cadastros-hoje">--</span>
+      </div>
+    </section>
+
+    <section class="conheceu-section">
+      <h2>Conheceu por quem</h2>
+      <div class="conheceu-content">
+        <div class="chart-container">
+          <canvas id="pizza-chart"></canvas>
+        </div>
+        <div class="table-container">
+          <table id="conheceu-table">
+            <thead>
+              <tr>
+                <th>Resposta</th>
+                <th>Quantidade</th>
+                <th>Porcentagem</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="registros-section">
+      <h2>Registros Recentes</h2>
+      <div class="table-container">
+        <table id="registros-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Número</th>
+              <th>Conheceu por quem</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="pagination-wrapper">
+        <span id="pagination-info" class="pagination-info"></span>
+        <div id="pagination" class="pagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
